@@ -3,9 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guin Cosmetics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /*asterick means it app;lies universally*/
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(238, 227, 227);
+            overflow-x:hidden;
+        }
+        .top_banner {
+            background-color: rgb(225, 241, 253);
+            color: rgb(96, 94, 72);
+            text-decoration: underline;
+            font-size: 1rem;
+            padding: 10px 15px;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            font-style:italic;
+            border-style:solid;
+            border-bottom-style:double;
+            border-width:8px;
+            border-color:rgb(174, 203, 224);
+        }
+/**************************************************************/
+        .title_banner {
+            background-color: rgb(193, 216, 240);
+            color: rgb(242, 249, 255);
+            position:relative;
+            text-decoration: none;
+            padding: 2px 5px;
+            display:flex;
+            height:12vh;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+            width: 100%;
+            font-family:serif;
+            border-right-width:8px;
+            border-left-width:8px;
+            border-top-width:0px;
+            border-bottom-width:0px;
+            border-color:rgb(155, 184, 214);
+            border-style:solid;
+        }
+        
+        .title_banner h1{
+            margin:0;
+            white-space:nowrap;
+        }
+        .logo_banner {
+            background-color: rgb(193, 216, 240);
+            position:relative;
+            padding-bottom:10px;
+            display:flex;
+            height:8.5vh;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+            width: 100%;
+            border-right-width:8px;
+            border-left-width:8px;
+            border-top-width:0px;
+            border-bottom-width:0px;
+            border-color:rgb(155, 184, 214);
+            border-style:solid;
+        }
+        .logo_banner img{
+            height:180%;
+            transform:translateY(-12px);
+            
+        }
+        
+        .slogan_banner {
+            background-image:url('https://img.magnific.com/free-vector/christmas-background-with-snowy-ice-texture_1048-19584.jpg?semt=ais_hybrid&w=740&q=80');
+            color: rgb(79, 116, 143);
+            text-decoration: underline;
+            font-size: 2rem;
+            padding: 10px 5px;
+            flex-direction:column;
+            align-items:center;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            font-style:italic;
+            font-weight:bold;
+            height:30vh;
+            margin-top:80px;
+            transition: transform 0.4s ease;
+        }
+        .slogan_banner:hover{
+            transform:scale(1.07);
+        }
+        /*NAV BAR STYLE CODE*/
+/***************************************************************/
+
+
+
+
+        .nav_offset {
+            background-color: rgb(139, 182, 207);
+            font-family: serif;
+            font-size: 1.25rem;
+            display: flex;
+            flex-direction: row;
+            /*how stuff is positioned, left 2 right*/
+            align-items: center;
+            justify-content: center;
+            padding: 0.1rem;
+            border-right-width: 8px;
+            border-left-width:8px;
+            border-bottom-width:0px;
+            border-top-width:0px;
+            border-color:rgb(118, 158, 181);
+            border-style:solid;
+        }
+
+
+        .nav_list {
+            list-style: none;
+            margin:0;
+            padding:0;
+            display:flex;
+            align-items:center;
+        }
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .menu, .end {
+            color: #ebebeb;
+            text-decoration: none;
+            /*removes underline*/
+            display: inline-block; /*prevents font-size change from changing size of navbar, needed for transform:scale*/
+            transition: transform 0.2s ease, color 0.2s ease; 
+            padding: 0.75rem 3.5rem;
+        }
+
+
+        .end {
+            margin-right: 0;
+        }
+
+
+        .dropdown:hover .enlarge,
+        .enlarge:hover {
+           transform: scale(1.2);
+           /*using transform:scale instead of changing font-size directly allows me to use transition effect*/ 
+           color: white;
+           text-decoration: underline;
+           font-weight: bold;
+       }
+/**DROPDOWN MENU STYLES**/
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top:100%;
+            left:50%;
+            transform: translateX(-50%);
+            background-color: rgb(139, 182, 207);
+            min-width: 180px;
+            z-index:1000;
+            border-radius: 0 0 6px 6px;
+            overflow:hidden;
+        }
+        .dropdown-content a {
+            color:#ebebeb;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-size: 1.05rem;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: rgb(255, 245, 215);
+            color: rgb(96, 94, 72);
+        }
+        .dropdown:hover .dropdown-content {
+            display:block;
+        }
+    /**************************************************/
+        .product_banner {
+            position:relative;
+            max-width: 800px;
+            min-height:500px;
+            display:flex;
+            background-color:rgb(255, 245, 215);
+            flex-direction: column;
+            align-items:flex-start;
+            justify-content:center;
+            padding: 50px 20px 200px 420px;
+            margin:auto;
+            background-image: url('https://res.cloudinary.com/qgtffne9/image/upload/f_auto/q_auto/IMG_4803.png');
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            color:rgb(79, 116, 143);
+            font-size:2rem;
+        }
+        .product_banner_content {
+            display:flex;
+            flex-direction:column;
+            align-items:flex-start;
+            gap: 20px
+        }
+        
+        
+        .shop_now_button {
+            display:inline-block;
+            background-color:white;
+            color:rgb(96, 94, 72);
+            text-decoration:none;
+            font-family:serif;
+            font-size:1.2rem;
+            padding:12px 28px;
+            border-width: 2px;
+            border-style:solid;
+            border-color:white;
+            border-radius:2px;
+            font-weight:bold;
+            transition: transform 0.1s ease, background-color 0.1s ease;
+        }
+        .shop_now_button:hover {
+            background-color:rgb(255, 245, 215);
+            transform:scale(1.02);
+        }
+        
+        main {
+            flex:1;
+        }
+        
+        
+        .bottom_banner {
+            background-color: rgb(255, 245, 215);
+            color: rgb(96, 94, 72);
+            text-decoration: none;
+            font-size: 1.3rem;
+            padding: 50px 15px 280px 15px;
+            max-width: 100%;
+            display: flex;
+            align-items:center;
+            flex-direction:column;
+            transition: transform 0.4s ease;
+            box-sizing:border-box;
+            overflow:hidden;
+
+        }
+        
+        .bottom_banner:hover{
+            transform:scale(1.07);
+        }
+        .footer a {
+            background-color: rgb(255, 245, 215);
+            color: rgb(96, 94, 72);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 15px;
+            width: 100%;
+            justify-content: flex-start;
+            display: flex;
+        }
+        
+        .footer b {
+            background-color: rgb(255, 245, 215);
+            color: rgb(96, 94, 72);
+            text-decoration: none;
+            font-size: 0.7rem;
+            padding: 8px 15px;
+            width: 100%;
+            justify-content: flex-start;
+            display: flex;
+        }
+        
+        .footer b:hover{
+            text-decoration:underline;
+        }
+
+
+    </style>
 </head>
 <body>
-    <h1>Claire Chen</h1>
+    <div class="top_banner">ALL ITEMS 0% OFF</div>
+    <div class="title_banner">
+        <h1>|| GUIN COSMETICS ||</h1>
+    </div>
+    <div class="logo_banner"><img src="https://res.cloudinary.com/qgtffne9/image/upload/f_auto/q_auto/IMG_4805.png"></div>
+
+
+
+
+    <nav class="nav_offset">
+        <ul class="nav_list">
+            <li class="dropdown">
+                <a href="#" class="menu enlarge">HOME</a>
+            </li>
+
+
+            <li class="dropdown">
+                <a href="#" class="menu enlarge">FACE</a>
+                <div class="dropdown-content">
+                    <a href="#">Blush</a>
+                    <a href="#">Highlighter</a>
+                </div>
+            </li>
+
+
+            <li class="dropdown">
+                <a href="#" class="menu enlarge">EYES</a>
+                <div class="dropdown-content">
+                    <a href="#">Eyeshadow</a>
+                    <a href="#">Eyeliner</a>
+                </div>
+            </li>
+
+
+            <li class="dropdown">
+                <a href="#" class="menu enlarge">LIPS</a>
+                <div class="dropdown-content">
+                    <a href="#">Lipstick (NEW!)</a>
+                    <a href="#">Lipgloss</a>
+                    <a href="#">Lip balm</a>
+                </div>
+            </li>
+
+
+            <li class="dropdown">
+                <a href="#" class="menu enlarge">OTHER</a>
+                <div class="dropdown-content">
+                    <a href="#">Makeup Brushes</a>
+                    <a href="#">Sponges</a>
+                </div>
+            </li>
+
+
+        </ul>
+    </nav>  
+    <div class="product_banner">
+        <div class="product_banner_content"
+            <h1>JUST IN FROM GUIN. The Lipstick Line; made for every occassion.</h1>
+            <a href="#" class="shop_now_button">Shop now &rarr;</a>
+        </div>
+    </div>
+    <div class="slogan_banner">
+        <h1>Waddle into beauty.</h1>
+        </div>
+    <div class="bottom_banner">Sign up for updates:</div>
+    <div class="footer"><a>&copy; 2026 Guin. All rights reserved.</a></div>
+    <div class="footer"><b>    ▪ Refund Policy ▪ Privacy Policy ▪ Terms of Service ▪ Shipping Policy ▪ Contact Information</b></div>
+
+
+
+
+
+
+
 </body>
+   
 </html>
